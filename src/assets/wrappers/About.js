@@ -31,6 +31,7 @@ export const Wrapper = styled.main`
   }
   .about-link {
     cursor: pointer;
+    color: var(--white);
     transition: var(--transition);
   }
   .about-link:hover {

@@ -11,15 +11,15 @@ export const About = () => {
                 </h3>
                 <p className="about-subtitle">IF YOU EXIST, YOU ARE A PERSON</p>
                 <div className="about-links">
-                    <div className="about-link">
+                    <a href='https://vk.com/krpvu' target='_blank' rel='noreferrer' className="about-link">
                         <SlSocialVkontakte />
-                    </div>
-                    <div className="about-link">
+                    </a>
+                    <a href='https://www.instagram.com/krpvu' target='_blank' rel='noreferrer' className="about-link">
                         <FaInstagram />
-                    </div>
-                    <div className="about-link">
+                    </a>
+                    <a href='https://github.com/hinno666' target='_blank' rel='noreferrer' className="about-link">
                         <FaGithub />
-                    </div>
+                    </a>
                 </div>
             </div>
         </Wrapper>

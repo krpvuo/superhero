@@ -41,6 +41,11 @@ export const Wrapper = styled.main`
     border: 5px var(--primary-400) solid;
   }
 
+  .landing__link {
+    width: 100%;
+    background-color: var(--primary-400);
+  }
+
   .swiper-slide img {
     display: block;
     max-width: 100%;

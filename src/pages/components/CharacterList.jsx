@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Loader } from "./Loader"
+import emptyImg from "../../assets/images/empty.png"
+
 
 export const CharacterList = ({ data, error, loading }) => {
 
@@ -22,7 +24,7 @@ export const CharacterList = ({ data, error, loading }) => {
                             <p className="page__character-name">
                                 {character.name}
                             </p>
-                            <img src={character?.image?.url} alt={character.name} />
+                            <img src={character?.image?.url} alt={character.name} onError={(e) => { e.target.src = emptyImg }} />
                         </NavLink>
                     );
                 })

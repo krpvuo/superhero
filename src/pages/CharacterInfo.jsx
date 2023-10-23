@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Wrapper } from "../assets/wrappers/CharacterInfo";
 import { Loader } from "./components/Loader";
 import { useState } from "react";
+import emptyImg from '../assets/images/empty.png'
+
 
 export const CharacterInfo = () => {
 
@@ -16,7 +18,7 @@ export const CharacterInfo = () => {
         queryFn: async () => {
             try {
                 const { data } = await customFetch.get(`${id}`)
-                console.log(data);
+                
                 return data
             } catch (error) {
                 return { data: [] };
@@ -46,7 +48,7 @@ export const CharacterInfo = () => {
                 <p className="character__subtitle">find out everything about the character</p>
                 <div className="character__about">
                     <div className="character__about-img">
-                        <img src={data.image?.url} alt="" />
+                        <img src={data.image?.url} alt="" onError={(e) => { e.target.src = emptyImg }} />
                     </div>
                     <div className="character__info">
                         <div className="tabs">
@@ -61,7 +63,7 @@ export const CharacterInfo = () => {
                                 const displayValue = value === 'null' || value === '' ? '-' : value;
                                 return (
                                     <div className="tab__content-info" key={key}>
-                                        <p><span>{`${key ?? ''}: `}</span>{displayValue}</p>
+                                        <p><span>{`${key.replace(/-/g, " ")}: `}</span>{displayValue}</p>
                                     </div>
                                 );
                             })}

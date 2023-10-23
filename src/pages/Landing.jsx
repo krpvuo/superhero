@@ -4,7 +4,8 @@ import { Pagination, Autoplay } from 'swiper/modules';
 import { useQuery } from '@tanstack/react-query';
 import { customFetch } from '../utils/utils';
 import { Loader } from './components/Loader';
-import emptyImg from '../assets/images/empty.jpg'
+import emptyImg from '../assets/images/empty.png'
+import { NavLink } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -22,7 +23,7 @@ export const Landing = () => {
         queryKey: ['character'],
         queryFn: async () => {
             try {
-                const respone = await customFetch.get(`/search/fa`)
+                const respone = await customFetch.get(`/search/marvel`)
                 const { data } = respone
 
                 return data
@@ -64,8 +65,9 @@ export const Landing = () => {
                             {data.results.map((character) => {
                                 return (
                                     <SwiperSlide key={character.id}>
-                                        <img src={character.image.url} alt={character.name} onError={(e) => { e.target.src = emptyImg }} />
-                                        {console.log(character.image.url)}
+                                        <NavLink className='landing__link' to={`/characters/${character.id}`}>
+                                            <img src={character.image.url} alt={character.name} onError={(e) => { e.target.src = emptyImg }} />
+                                        </NavLink>
                                     </SwiperSlide>
                                 )
                             })}

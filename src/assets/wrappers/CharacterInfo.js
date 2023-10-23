@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
-  margin: 100px 0;
+  margin: 50px 0;
   color: var(--white);
   line-height: 130%;
   font-size: 24px;
+
+  .page {
+    min-height: auto;
+  }
 
   .character__title {
     margin-bottom: 20px;
@@ -30,10 +34,17 @@ export const Wrapper = styled.main`
 
   .character__info p {
     line-height: 130%;
+    margin-bottom: 10px;
   }
 
   .character__info span {
+    display: inline-block;
     font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px;
+    background-color: var(--primary-400);
+    border-radius: 10px;
+    margin-right: 10px;
   }
 
   .character__about-img {
