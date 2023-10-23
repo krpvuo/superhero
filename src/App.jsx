@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { HomeLayout, About, Landing, Character, Newsletter, Characters } from "./pages"
+import { HomeLayout, About, Landing, Newsletter, Characters, CharacterInfo } from "./pages"
 
 
 
@@ -14,7 +14,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'characters',
-        element: <Characters />
+        element: <Characters />,
+      },
+      {
+        path: '/characters/:id',
+        element: <CharacterInfo />,
       },
       {
         path: 'newsletter',

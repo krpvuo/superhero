@@ -1,13 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
 
-    const [characters, setCharacters] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('fa');
 
+    return (
+        <AppContext.Provider value={{ searchTerm, setSearchTerm }}>
+            {children}
+        </AppContext.Provider>
+    );
+};
 
-    return <AppContext.Provider value={{ characters, setCharacters }}>
-        {children}
-    </AppContext.Provider>
-}
+export const useGlobalContext = () => useContext(AppContext);
