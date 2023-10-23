@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   .loader {
     transform: rotateZ(45deg);
     perspective: 1000px;

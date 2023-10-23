@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const Wrapper = styled.main`
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   .ladning__content {
-    width: var(--view-width);
-    max-width: var(--max-width);
-    margin: 0 auto;
     margin-top: 50px;
     display: flex;
     align-items: center;
@@ -14,7 +11,9 @@ export const Wrapper = styled.main`
 
   .landing__content-description {
     flex: 1 1 50%;
+    gap: 20px;
     text-align: center;
+    margin-bottom: 20px;
   }
 
   .landing__content-description h2 {
@@ -27,7 +26,7 @@ export const Wrapper = styled.main`
   }
 
   .swiper {
-    flex: 1 1 50%;
+    flex: 1 1 350px;
     margin: 0;
   }
 
@@ -39,19 +38,34 @@ export const Wrapper = styled.main`
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    border: 5px var(--primary-400) solid;
+  }
+
+  .landing__link {
+    width: 100%;
+    background-color: var(--primary-400);
   }
 
   .swiper-slide img {
     display: block;
+    max-width: 100%;
     width: 100%;
     height: 550px;
     object-fit: cover;
     border-radius: 10px;
-    border: 5px var(--primary-400) solid;
     box-shadow: var(--shadow-4);
   }
 
   .swiper-pagination-bullets {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: center;
   }
@@ -64,7 +78,7 @@ export const Wrapper = styled.main`
     display: grid;
     place-items: center;
     font-size: 12px;
-    color:var(--white);
+    color: var(--white);
     opacity: 0.7;
     font-weight: 600;
     background: var(--grey-500);
@@ -86,9 +100,10 @@ export const Wrapper = styled.main`
   }
 
   .landing__content-info {
-    margin: 200px 0;
+    margin: 100px 0;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
     gap: 10px;
     align-items: center;
   }
@@ -102,7 +117,7 @@ export const Wrapper = styled.main`
   }
 
   .landing__content-info-img {
-    flex: 1 1 45%;
+    flex: 1 1 405px;
   }
 
   .landing__content-info-img .landing__content-description {

@@ -7,6 +7,12 @@ export const Wrapper = styled.main`
   background-size: cover;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   color: var(--white);
+  .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
   .about-title {
     font-size: clamp(1.5rem, 3vw, 3rem);
     font-weight: 900;
@@ -25,6 +31,7 @@ export const Wrapper = styled.main`
   }
   .about-link {
     cursor: pointer;
+    color: var(--white);
     transition: var(--transition);
   }
   .about-link:hover {

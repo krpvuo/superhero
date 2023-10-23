@@ -5,7 +5,7 @@ export const Navbar = () => {
     return (
         <Wrapper>
             <div className="nav-center">
-                <span className="logo">superhero</span>
+                <NavLink to='/' className="logo">superhero</NavLink>
                 <div className="nav-links">
                     <NavLink to='/' className='nav-link'>
                         Home
@@ -16,9 +16,9 @@ export const Navbar = () => {
                     <NavLink to='/characters' className='nav-link'>
                         Characters
                     </NavLink>
-                    <NavLink to='/newsletter' className='nav-link'>
+                    {/* <NavLink to='/newsletter' className='nav-link'>
                         Newsletter
-                    </NavLink>
+                    </NavLink> */}
                 </div>
             </div>
         </Wrapper>
